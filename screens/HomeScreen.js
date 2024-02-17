@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import * as Text from '../components/atoms/text/index';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>HomeSreen</Text>
-    </View>
+    <SafeAreaView>
+      <Text.Small content="HomeScreen" />
+    </SafeAreaView>
   )
 }
