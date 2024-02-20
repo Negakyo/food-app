@@ -2,11 +2,13 @@ import { View, Image } from 'react-native';
 import React from 'react';
 import * as Text from '../atoms/text/index';
 
-const CategoriePill = ({ categorie }) => {
+const CategoriePill = ({ categorie, isActive }) => {
   return (
-    <View className="flex-row items-center h-12 w-36 rounded-2xl justify-between px-3 bg-white">
-        <Image className="h-8 w-8" source={categorie.image} />
-        <Text.Regular bold={true} content={categorie.nom} />
+    <View className={` flex flex-row items-center h-12 rounded-2xl px-4 ${isActive ? 'bg-[#d97706]' : 'bg-white'}`}>
+        <Image className="h-8 w-8 flex bg-primary rounded-full" source={categorie.image} />
+        <View className="ml-4">
+        <Text.Regular bold={true} content={categorie.nom} color={isActive ? 'white' : '#000000'} />
+        </View>
     </View>
   );
 }
