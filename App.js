@@ -1,8 +1,8 @@
 import Navigation from './navigation';
 import { useFonts } from 'expo-font';
+import { FavoritesProvider } from './context/FavoritesContext';
 
 export default function App() {
-
   let [fontsLoaded] = useFonts({
     'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
     'Montserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
@@ -10,15 +10,16 @@ export default function App() {
     'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
     'Montserrat-ExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
   });
-  if (!fontsLoaded){
+
+  if (!fontsLoaded) {
     return (
       console.log('Chargement des polices')
     );
   }
 
   return (
-    <>
+    <FavoritesProvider>
       <Navigation />
-    </>
+    </FavoritesProvider>
   );
 }
